@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearlayoutOne"
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <ImageView
+            android:id="@+id/logo"
+            android:src="@drawable/four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!--아이디등등-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearlayoutTwo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="5"
+        android:layout_gravity="center"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/idText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="아이디:"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/nameText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idResult" />
+
+        <TextView
+            android:id="@+id/idResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="boll"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/idText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/idText"
+            app:layout_constraintStart_toEndOf="@+id/idText"
+            app:layout_constraintTop_toTopOf="@+id/idText" />
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="이름:"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/idText"
+            app:layout_constraintBottom_toTopOf="@+id/ageText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nameResult" />
+
+
+        <TextView
+            android:id="@+id/nameResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="elly"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/nameText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.688"
+            app:layout_constraintLeft_toRightOf="@+id/nameText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/nameText"
+            app:layout_constraintVertical_bias="0.96" />
+
+        <TextView
+            android:id="@+id/ageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="나이:"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/nameText"
+            app:layout_constraintBottom_toTopOf="@+id/mbtiText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ageResult" />
+
+
+        <TextView
+            android:id="@+id/ageResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="00"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ageText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ageText"
+            app:layout_constraintTop_toTopOf="@+id/ageText" />
+
+        <TextView
+            android:id="@+id/mbtiText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="MBTI:"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/ageText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/mbtiResult" />
+
+        <TextView
+            android:id="@+id/mbtiResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="INTP"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/mbtiText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mbtiText"
+            app:layout_constraintTop_toTopOf="@+id/mbtiText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--END OF MBTI -->
+
+    <LinearLayout
+        android:id="@+id/linearThree"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/finishBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontjua"
+            android:text="종료" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

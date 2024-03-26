@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearlayoutOne"
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <ImageView
+            android:id="@+id/logo"
+            android:src="@drawable/two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayoutTwo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="5">
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/fontjua"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:hint="이름을 입력하세요."/>
+        <TextView
+            android:id="@+id/idText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="아이디"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/fontjua"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/editId"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="textPassword"
+            android:hint="아이디를 입력하세요."/>
+        <TextView
+            android:id="@+id/txtPw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="비밀번호"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/fontjua"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/editPw"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="textPassword"
+            android:hint="비밀번호를 입력하세요."/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:layout_weight="2">
+
+
+
+        <Button
+            android:id="@+id/joinBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/fontjua"
+            android:text="회원가입"
+            app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+</LinearLayout>
