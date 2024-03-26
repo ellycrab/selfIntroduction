@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="10"
+    android:weightSum="13"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linearlayoutOne"
         android:layout_width="match_parent"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:orientation="vertical"
         android:layout_height="0dp">
         <ImageView
@@ -20,68 +20,181 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constOne"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/fontjua"
+            android:gravity="center"
+            android:text="이름"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/editName"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="이름을 입력하세요."
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/nameText"
+            app:layout_constraintStart_toEndOf="@+id/nameText"
+            tools:layout_editor_absoluteY="12dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--아이디-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constTwo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/idText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/fontjua"
+            android:gravity="center"
+            android:text="아이디"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/editId"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/editId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="아이디를 입력하세요."
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/idText"
+            app:layout_constraintStart_toEndOf="@+id/idText"
+            tools:layout_editor_absoluteY="12dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--end of 아이디-->
+
+    <!--email-->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearlayoutTwo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="5">
+        android:orientation="horizontal"
+
+        android:gravity="center"
+        android:layout_weight="1">
+
         <TextView
-            android:id="@+id/nameText"
-            android:layout_width="match_parent"
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이름"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/fontjua"
-            android:textSize="20sp"/>
+            android:gravity="center"
+            android:text="email"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/editEmail"
+            tools:layout_editor_absoluteX="16dp" />
+
         <EditText
-            android:id="@+id/editName"
-            android:layout_width="300dp"
+            android:id="@+id/editEmail"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:inputType="text"
-            android:hint="이름을 입력하세요."/>
-        <TextView
-            android:id="@+id/idText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="아이디"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:fontFamily="@font/fontjua"
-            android:textSize="20sp"/>
-        <EditText
-            android:id="@+id/editId"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:inputType="textPassword"
-            android:hint="아이디를 입력하세요."/>
+            android:hint="email을 입력하세요."
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/emailText"
+            app:layout_constraintStart_toEndOf="@+id/emailText"
+            tools:layout_editor_absoluteY="12dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--end of email-->
+
+
+
+    <!--start of 비밀번호-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constFour"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+
+        android:gravity="center"
+        android:layout_weight="1">
+
         <TextView
             android:id="@+id/txtPw"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="비밀번호"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/fontjua"
-            android:textSize="20sp"/>
+            android:gravity="center"
+            android:text="비밀번호"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/editPw"
+            tools:layout_editor_absoluteX="16dp" />
+
         <EditText
             android:id="@+id/editPw"
-            android:layout_width="300dp"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:hint="8이상,대문자,특수문자포함 입력."
             android:inputType="textPassword"
-            android:hint="비밀번호를 입력하세요."/>
+            app:layout_constraintLeft_toRightOf="@+id/txtPw"
+            tools:layout_editor_absoluteY="12dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--end of 비밀번호-->
 
-    </LinearLayout>
+    <!--start of 비밀번호 찾기-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constFive"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtPwConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/fontjua"
+            android:gravity="center"
+            android:text="비밀번호찾기"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/editPwConfirm"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/editPwConfirm"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:hint="비밀번호를 다시 입력하세요."
+            android:inputType="textPassword"
+            app:layout_constraintLeft_toRightOf="@+id/txtPwConfirm"
+            tools:layout_editor_absoluteY="12dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--end of 비밀번호 찾기-->
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,11 +202,9 @@
         android:orientation="vertical"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:gravity="center_vertical"
-        android:layout_gravity="center"
-        android:layout_weight="2">
 
-
+        android:gravity="bottom"
+        android:layout_weight="3">
 
         <Button
             android:id="@+id/joinBtn"
