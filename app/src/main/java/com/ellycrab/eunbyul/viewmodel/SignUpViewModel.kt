@@ -78,7 +78,11 @@ class SignUpViewModel: ViewModel() {
         pwConfirm: String,
         emailConfirm: String,
 
+<<<<<<< HEAD
         ): Boolean {
+=======
+    ): Boolean {
+>>>>>>> a4ff07ea4907c22e64f96f6cd21b2193cd3eaae7
 
         if (name.isEmpty()) {
 
@@ -113,4 +117,8 @@ class SignUpViewModel: ViewModel() {
 
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a4ff07ea4907c22e64f96f6cd21b2193cd3eaae7
