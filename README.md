@@ -11,6 +11,8 @@ mvvm패턴을 활용한 회원가입 프로토타입
 SignInViewModel  추가
 
 단일 책임원칙 적용
+-viewmodel => 데이터 변경처리
+-activity => view 단만 처리
 
 ![mvvmjoin](https://github.com/ellycrab/selfIntroduction/assets/54714275/f178c24b-48c6-4d6d-b301-dfb7d62c42c0)
 
