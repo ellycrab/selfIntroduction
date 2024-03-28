@@ -12,6 +12,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.ellycrab.eunbyul.R
+import com.ellycrab.eunbyul.viewmodel.SignInViewModel
 import com.ellycrab.eunbyul.viewmodel.SignUpViewModel
 
 class SignInActivity : AppCompatActivity() {
@@ -20,7 +21,9 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var editId: EditText
     private lateinit var editPw: EditText
 
+    // jetpack 라이브러리에서 제공하는 viewModels() 확장 함수를 사용하여 viewModel인스턴스를 생성한 것
     val viewModel: SignUpViewModel by viewModels()
+    private val viewModelSignIn: SignInViewModel by viewModels()
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
@@ -29,23 +32,20 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signin)
 
         // View 초기화
-        editName = findViewById(R.id.editName)
-        editId = findViewById(R.id.editId)
-        editPw = findViewById(R.id.editPw)
+        initSignInView()
 
         //viewModel로부터 데이터 가져오기
-        viewModel.name.observe(this, { name ->
+        viewModel.name.observe(this) { name ->
             editName.setText(name)
-        })
+        }
 
-        viewModel.id.observe(this, { id ->
+        viewModel.id.observe(this) { id ->
             editId.setText(id)
-        })
+        }
 
-        viewModel.password.observe(this, { password ->
+        viewModel.password.observe(this) { password ->
             editPw.setText(password)
-        })
-
+        }
 
 
         // 회원가입 결과 처리를 설정
@@ -56,6 +56,9 @@ class SignInActivity : AppCompatActivity() {
         loginBtn.setOnClickListener {
             if (allFieldsEntered()) {
                 // 모든 필드가 입력되었으면 로그인을 진행
+                val id = editId.text.toString().trim()
+                val pw = editPw.text.toString().trim()
+                viewModelSignIn.updateLoginData(id,pw)
             }
         }
 
@@ -66,6 +69,12 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
         }
+    }
+
+    private fun initSignInView() {
+        editName = findViewById(R.id.editName)
+        editId = findViewById(R.id.editId)
+        editPw = findViewById(R.id.editPw)
     }
 
     // 모든 필드가 입력되었는지 확인
@@ -98,7 +107,7 @@ class SignInActivity : AppCompatActivity() {
                     val id = it.getStringExtra("id") ?: ""
                     val pw = it.getStringExtra("pw") ?: ""
 //
-                    viewModel.updateData(name, id, pw)
+                    viewModel.updateDataTryToSend(name, id, pw)
                     Toast.makeText(this@SignInActivity,
                         "이름: $name, 아이디: $id, 비밀번호: $pw", Toast.LENGTH_LONG).show()
                 }
