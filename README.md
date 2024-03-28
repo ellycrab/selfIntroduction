@@ -10,3 +10,6 @@ mvvm패턴을 활용한 회원가입 프로토타입
 - 비밀번호 확인
 - 이메일 유효성 검사
 ![mvvmjoin](https://github.com/ellycrab/selfIntroduction/assets/54714275/f178c24b-48c6-4d6d-b301-dfb7d62c42c0)
+
+
+https://crablo12.tistory.com/109
